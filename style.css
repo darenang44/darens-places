@@ -1,0 +1,88 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.search-panel {
+  position: absolute;
+  left: 110px;
+  top: 10px;
+  width: 400px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-panel:focus {
+  right: 10px;
+}
+
+.search-panel .search {
+  height: 29px;
+  display: flex;
+}
+
+.search-panel .search input {
+  flex: 1;
+  padding: 6px 12px;
+  border-radius: 12.5px;
+  border: 2px solid #aaa;
+  margin-right: 5px;
+}
+
+.search-panel .search input:focus {
+  outline: none;
+  border: 2px solid #555;
+}
+
+.search-panel .search button {
+  border-radius: 12.5px;
+  border: 2px solid #aaa;
+}
+
+.search-panel .search button:focus {
+  outline: none;
+  border: 2px solid #555;
+}
+
+.place {
+  height: 25px;
+  width: 490px;
+  padding: 5px;
+  background: rgba(255,255,255,0.9);
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.detail-panel {
+  background: rgba(0,0,0,0.5);
+  height: 100px;
+  width: 500px;
+  display: flex;
+}
+
+.detail-info {
+  padding: 10px;
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.result-panel {
+  position: absolute;
+  top: 39px;
+  bottom: 10px;
+  left: 10px;
+  overflow-y: scroll;
+}
