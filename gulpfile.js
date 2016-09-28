@@ -24,6 +24,7 @@ gulp.task('cleanCSS', function () {
 gulp.task('watch', function () {
   gulp.watch('**/*.js', ['uglify']);
   gulp.watch('**/*.html',['htmlmin']);
+  gulp.watch('**/*.css',['cleanCSS']);
 });
 
 gulp.task('default',['uglify', 'htmlmin']);
