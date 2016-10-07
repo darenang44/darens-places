@@ -2,8 +2,15 @@
 
 ## Single page application built using AngularJS
 
-### Install Dev Dependencies for Gulp
-1. npm install
+### To Run
+Double click the app/src/index.html file
+
+### To Build
+Run commands:
+```
+npm install
+npm run gulp
+```
 
 #### Map Features
 1.  The center of the map starts at Zenefit's address

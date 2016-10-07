@@ -2,23 +2,27 @@ const gulp = require('gulp');
 const uglify = require('gulp-uglify');
 const htmlmin = require('gulp-htmlmin');
 const cleanCSS = require('gulp-clean-css');
+const ngAnnotate = require('gulp-ng-annotate');
+
+gulp.task('buildJs', function () {
+  gulp.src('app/src/index.js')
+  .pipe(ngAnnotate())
+  .pipe(uglify({
+    mangle: false
+  }))
+  .pipe(gulp.dest('./public/'));
+});
 
 gulp.task('htmlmin', function () {
-  gulp.src('./index.html')
+  gulp.src('app/src/index.html')
   .pipe(htmlmin({collapseWhitespace: true}))
   .pipe(gulp.dest('./public/'));
 });
 
-gulp.task('uglify', function () {
-  gulp.src('./index.js')
-  .pipe(uglify())
-  .pipe(gulp.dest('./public/assets/'));
-});
-
 gulp.task('cleanCSS', function () {
-  gulp.src(['./style.css'])
+  gulp.src(['app/src/style.css'])
   .pipe(cleanCSS())
-  .pipe(gulp.dest('./public/assets/'));
+  .pipe(gulp.dest('./public/'));
 });
 
 gulp.task('watch', function () {
@@ -27,4 +31,4 @@ gulp.task('watch', function () {
   gulp.watch('**/*.css',['cleanCSS']);
 });
 
-gulp.task('default',['uglify', 'htmlmin', 'cleanCSS']);
+gulp.task('default',['buildJs', 'htmlmin', 'cleanCSS']);
